@@ -6,19 +6,20 @@ class Comment extends Component {
     this.state = {
 
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
-
-  handleSubmit() {
+  // 箭头函数里this指向实例对象
+  // 不加static，实例对象可以访问，
+  // 类的内部相当于类的原型（prototype），所有在类中直接定义的方法相当于在原型上定义方法，都会被类的实例继承，但是使用static静态方法定义的不会被实例继承
+  // 类内部的this指向的是实例对象
+  handleSubmit = () => {
     let person = {}
     person.name = this.input.value
     person.comment = this.textarea.value
     this.props.setData(person)
   }
-
-
   render() {
     return (
       <div style={{ flex: '1' }}>

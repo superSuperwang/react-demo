@@ -9,17 +9,17 @@ class App extends Component {
     this.state = {
       data: []
     }
-    this.setData = this.setData.bind(this)
-    this.deleteComment = this.deleteComment.bind(this)
+    // this.setData = this.setData.bind(this)
+    // this.deleteComment = this.deleteComment.bind(this)
   }
 
-  setData(obj) {
+  setData = (obj) => {
     const { data } = this.state
     data.push(obj)
     this.setState({ data })
   }
 
-  deleteComment(index) {
+  deleteComment = (index) => {
     const { data } = this.state
     data.splice(index, 1)
     this.setState({ data })
